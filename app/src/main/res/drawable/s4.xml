@@ -1,0 +1,34 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 蓝色按钮-->
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="@color/touming"/>
+            <corners android:radius="8dp"/>
+            <stroke android:width="1dp"
+                    android:color="@color/darkcyan"
+                />
+        </shape>
+    </item>
+    >
+
+    <item android:state_focused="true">
+        <shape>
+            <solid android:color="@color/touming"/>
+            <corners android:radius="8dp"/>
+            <stroke android:width="1dp"
+                    android:color="@color/darkcyan"
+                />
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <solid android:color="@color/darkcyan"/>
+            <corners android:radius="8dp"/>
+            <stroke android:width="1dp"
+                    android:color="@color/darkcyan"
+                />
+        </shape>
+
+    </item>
+</selector>

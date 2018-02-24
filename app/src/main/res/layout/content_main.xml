@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="9">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"/>
+
+
+        <LinearLayout
+            android:id="@+id/fragment_layout"
+            android:layout_width="383dp"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:orientation="horizontal">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </android.support.v4.view.ViewPager>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"
+                >
+            </ImageView>
+
+            <RadioGroup
+                android:id="@+id/group"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/darkcyan"
+                android:orientation="horizontal"
+                >
+
+                <RadioButton
+                    android:id="@+id/homepageId"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    style="@style/RadioButton"
+                    android:drawableTop="@drawable/button_homepage"
+                    android:text="@string/homepage_button"
+                    android:textColor="@drawable/selector_text"
+                    >
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/contactpageId"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/button_contactspage"
+                    android:text="@string/contactspage_button"
+                    style="@style/RadioButton">
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/personalpageId"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/button_personalpage"
+                    android:text="@string/personalpage_button"
+                    style="@style/RadioButton">
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/messagepageId"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/button_messagepage"
+                    android:text="@string/messagepage_button"
+                    style="@style/RadioButton">
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/plusId"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/button_pluspage"
+                    style="@style/MorepageRadioButton">
+                </RadioButton>
+
+
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

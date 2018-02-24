@@ -1,0 +1,62 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme_NoTitle" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimary">@color/touming</item>
+        <item name="colorPrimaryDark">@color/darkcyan</item>
+        <item name="colorAccent">@color/darkgray</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+        <item name="contentInsetLeft">0dp</item>
+        <item name="contentInsetRight">0dp</item>
+    </style>
+
+    <style name="AppTheme_NoTitle.LoginActivity" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimary">@color/touming</item>
+        <item name="colorPrimaryDark">@color/darkcyan</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <!--自定义radiobutton样式-->
+    <style name="RadioButton">
+        <item name="android:button">@null</item>
+        <item name="android:background">@color/touming</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">11dp</item>
+        <item name="android:textColor">@drawable/selector_text</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <style name="MorepageRadioButton">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/touming</item>
+        <item name="android:button">@null</item>
+    </style>
+
+    <!--自定义checkbox样式-->
+    <style name="CustomCheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/selector_checkbox</item>
+
+    </style>
+    <!--自定义抽屉菜单栏的状态颜色-->
+    <style name="Widget.Design.NavigationView.Color">
+        <item name="android:actionMenuTextColor">@color/colorPrimaryDark</item>
+    </style>
+    <!--自定义ratingbar样式-->
+    <style name="MyRatingBarStyle" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_layer</item>
+        <item name="android:minHeight">16dp</item>
+        <item name="android:maxHeight">16dp</item>
+    </style>
+
+</resources>

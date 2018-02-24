@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_login"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+    <TextView
+        android:id="@+id/register_TextViewId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="77dp"
+        android:text="Welcome!"
+        android:textColor="@color/tan"
+        android:textSize="40sp"/>
+
+    <EditText
+        android:id="@+id/register_usernameId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_TextViewId"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/selector_edittext"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:padding="8dp"
+        android:textColor="@color/tan"
+        android:textColorHint="@color/darkgray"/>
+
+    <EditText
+        android:id="@+id/register_passwordId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/register_usernameId"
+        android:layout_alignStart="@+id/register_usernameId"
+        android:layout_below="@+id/register_usernameId"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/selector_edittext"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="8dp"
+        android:textColor="@color/tan"
+        android:textColorHint="@color/darkgray"/>
+
+    <EditText
+        android:id="@+id/register_emailId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/register_passwordId"
+        android:layout_alignStart="@+id/register_passwordId"
+        android:layout_below="@+id/register_passwordId"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/selector_edittext"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:padding="8dp"
+        android:textColor="@color/tan"
+        android:textColorHint="@color/darkgray"/>
+
+    <EditText
+        android:id="@+id/register_phoneId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/register_emailId"
+        android:layout_alignStart="@+id/register_emailId"
+        android:layout_below="@+id/register_emailId"
+        android:background="@drawable/selector_edittext"
+        android:ems="10"
+        android:hint="Phone"
+        android:inputType="phone"
+        android:padding="8dp"
+        android:textColor="@color/tan"
+        android:textColorHint="@color/darkgray"/>
+
+    <Button
+        android:id="@+id/register_registerbuttonId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_phoneId"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"
+        android:background="@drawable/s4"
+        android:text="注    册"
+        android:textColor="@color/ivory"/>
+
+    <ImageButton
+        android:id="@+id/register_backbuttonId"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@mipmap/button_back"
+        android:padding="8dp"
+        android:text="返回"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_above="@+id/register_passwordId"
+        android:layout_marginBottom="13dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="22dp"
+        android:layout_toLeftOf="@+id/register_usernameId"
+        app:srcCompat="@mipmap/blue_personalcenter"/>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_above="@+id/register_emailId"
+        android:layout_alignEnd="@+id/imageView"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_marginBottom="13dp"
+        app:srcCompat="@mipmap/blue_password"/>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_above="@+id/register_phoneId"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignStart="@+id/imageView2"
+        android:layout_marginBottom="13dp"
+        app:srcCompat="@mipmap/blue_email"/>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignBottom="@+id/register_phoneId"
+        android:layout_alignLeft="@+id/imageView3"
+        android:layout_alignStart="@+id/imageView3"
+        android:layout_marginBottom="8dp"
+        app:srcCompat="@mipmap/blue_mobilephone"/>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="31dp"
+        app:srcCompat="@mipmap/login_arrow"/>
+</RelativeLayout>

@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Blues</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="login">登 录</string>
+
+    <!--主页底部导航按钮-->
+    <string name="homepage_button">主页</string>
+    <string name="contactspage_button">朋友</string>
+    <string name="personalpage_button">圈子</string>
+    <string name="messagepage_button">消息</string>
+
+    <string name="message_01">灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发</string>
+</resources>

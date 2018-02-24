@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/sample_main_layout"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:contentInsetStart="0dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:popupTheme="@style/AppTheme_NoTitle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/touming"
+                >
+
+                <ImageButton
+                    android:id="@+id/imbtn_camera"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@color/touming"
+                    android:src="@drawable/camera_24"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Blues"
+                    android:textStyle="italic|normal"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textColor="@color/darkcyan"
+                    android:textSize="28sp"/>
+
+                <ImageButton
+                    android:id="@+id/imbtn_search"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@color/touming"
+                    android:src="@drawable/search_24"
+                    />
+            </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <include layout="@layout/content_main"></include>
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:itemTextColor="@color/nav_selector"
+            app:itemIconTint="@color/nav_selector"
+            app:headerLayout="@layout/drawer_header"
+            app:menu="@menu/activity_main_drawer"/>
+
+
+    </android.support.v4.widget.DrawerLayout>
+
+
+</LinearLayout>
