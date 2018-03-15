@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         vp = (ViewPager) findViewById(R.id.viewpager);
         vp.setAdapter(adapter);
-        vp.setCurrentItem(PAGE_THREE, false);
+        vp.setCurrentItem(PAGE_ONE, false);
         vp.addOnPageChangeListener(this);
         igbt3.setChecked(true);
 
@@ -174,16 +174,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_account) {
             Intent account_intent = new Intent();
             account_intent.setClass(MainActivity.this, Individual_center.class);
+            account_intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//关掉所要到的界面中间的activity
+            account_intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);//设置不要刷新将要跳转的界面
             startActivity(account_intent);
 
         } else if (id == R.id.nav_gallery) {
             Intent gollery_intent = new Intent();
             gollery_intent.setClass(MainActivity.this, My_album.class);
+            gollery_intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//关掉所要到的界面中间的activity
+            gollery_intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);//设置不要刷新将要跳转的界面
             startActivity(gollery_intent);
 
         } else if (id == R.id.nav_good) {
             Intent marking_system_intent = new Intent();
             marking_system_intent.setClass(MainActivity.this, Marking_system.class);
+            marking_system_intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//关掉所要到的界面中间的activity
+            marking_system_intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);//设置不要刷新将要跳转的界面
             startActivity(marking_system_intent);
 
         } else if (id == R.id.nav_sign) {
@@ -196,16 +202,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_setting) {
             Intent setting_intent = new Intent();
             setting_intent.setClass(MainActivity.this, Setting.class);
+            setting_intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//关掉所要到的界面中间的activity
+            setting_intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);//设置不要刷新将要跳转的界面
             startActivity(setting_intent);
 
         } else if (id == R.id.nav_share) {
             Intent share_intent = new Intent();
             share_intent.setClass(MainActivity.this, Share.class);
+            share_intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//关掉所要到的界面中间的activity
+            share_intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);//设置不要刷新将要跳转的界面
             startActivity(share_intent);
 
         } else if (id == R.id.nav_help) {
             Intent help_intent = new Intent();
             help_intent.setClass(MainActivity.this, Help.class);
+            help_intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//关掉所要到的界面中间的activity
+            help_intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);//设置不要刷新将要跳转的界面
             startActivity(help_intent);
 
         }

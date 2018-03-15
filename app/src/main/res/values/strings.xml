@@ -18,6 +18,8 @@
 
     <string name="login">登 录</string>
 
+    <string name="no_idel">未设置</string>
+
     <!--主页底部导航按钮-->
     <string name="homepage_button">主页</string>
     <string name="contactspage_button">朋友</string>

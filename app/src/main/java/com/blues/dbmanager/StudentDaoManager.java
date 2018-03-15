@@ -15,16 +15,16 @@ import de.greenrobot.dao.query.QueryBuilder;
  * Created by Administrator on 2018/2/6.
  */
 
-public class DaoManager {
+public class StudentDaoManager {
 
     //标志，测试用
-    private static final String TAG = DaoManager.class.getSimpleName();
+    private static final String TAG = StudentDaoManager.class.getSimpleName();
 
     //数据库名称
     private static final String DB_NAME = "mydb.sqlite";
 
     //多线程访问
-    private volatile static DaoManager manager;
+    private volatile static StudentDaoManager manager;
     private static DaoMaster.DevOpenHelper helper;
     private static DaoMaster daoMaster;
     private static DaoSession daoSession;
@@ -35,12 +35,12 @@ public class DaoManager {
      * 使用单例模式获得操作数据库的对象
      * @return
      */
-    public static DaoManager getInstance() {
-        DaoManager instance = null;
+    public static StudentDaoManager getInstance() {
+        StudentDaoManager instance = null;
         if (manager == null) {
-            synchronized (DaoManager.class) {
+            synchronized (StudentDaoManager.class) {
                 if (instance == null) {
-                    instance = new DaoManager();
+                    instance = new StudentDaoManager();
                     manager = instance;
                 }
             }
@@ -68,7 +68,7 @@ public class DaoManager {
      * 完成对数据库的添加、删除、修改、查询的操作，仅仅是一个接口，供调用
      * @return
      */
-    public DaoSession getDaoSession() {
+    public DaoSession getStudentDaoSession() {
         if (daoSession == null) {
             if (daoMaster == null) {
                 daoMaster = getDaoMaster();

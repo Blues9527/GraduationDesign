@@ -5,14 +5,20 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RatingBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.blues.MainActivity;
+import com.blues.adapter.MyAdapter;
 import com.example.blues.myapplication.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2018/2/12.
@@ -24,6 +30,7 @@ public class Marking_system extends AppCompatActivity {
     private Button pingfen_bt;
     private ImageButton pingfen_back;
     private float i_1, i_2, i_3, i_4, i;
+    private Spinner spinner;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,6 +47,7 @@ public class Marking_system extends AppCompatActivity {
         pingfen_bt = (Button) findViewById(R.id.pingfen_bt);
         pingfen_tv = (TextView) findViewById(R.id.fenshu);
         pingfen_back = (ImageButton) findViewById(R.id.marking_system_back);
+        spinner = (Spinner) findViewById(R.id.marking_spinner);
 
         ratingBar_01.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
@@ -89,6 +97,32 @@ public class Marking_system extends AppCompatActivity {
             }
         });
 
+        //添加数据
+        final List<String> datas = new ArrayList<>();
+        datas.add("陈光明");
+        datas.add("陈冰川");
+        datas.add("陈光辉");
+        datas.add("陈蔼祥");
+
+        //配置适配器 MyAdapter为自定义适配器，继承自BaseAdapter
+        MyAdapter adapter = new MyAdapter(this);
+        spinner.setAdapter(adapter);
+        adapter.setDatas(datas);
+
+        //为选项设置监听事件
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(Marking_system.this, "您选择的老师是：" + datas.get(position), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
 }

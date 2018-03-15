@@ -37,7 +37,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="9"
                 android:gravity="center"
-                android:text="编辑个人资料"
+                android:text="个人资料"
                 android:textColor="@color/darkcyan"
                 android:textSize="28sp"
                 android:textStyle="italic|normal"/>
@@ -50,14 +50,14 @@
         android:layout_height="match_parent"
         android:background="@color/lightgray"
         android:orientation="vertical"
-        android:weightSum="8">
+        android:weightSum="10">
 
         <LinearLayout
             android:id="@+id/indiv_touxiang"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="15dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:background="@color/white"
             android:orientation="horizontal">
 
@@ -100,10 +100,39 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:gravity="right|center_vertical"
+                android:paddingRight="10dp"
                 android:text="Blues"
                 android:textSize="18dp"
                 />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/indiv_realname"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="真实姓名"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/realname_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:paddingRight="10dp"
+                android:text="蓝华建"
+                android:textSize="18dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -129,7 +158,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:gravity="right|center_vertical"
+                android:paddingRight="10dp"
                 android:text="男"
                 android:textSize="18dp"
                 />
@@ -157,9 +187,103 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:gravity="right|center_vertical"
+                android:paddingRight="10dp"
                 android:text="广东"
                 android:textSize="18dp"/>
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/indiv_identity"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="用户身份"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/identity_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:paddingRight="10dp"
+                android:text="学生"
+                android:textSize="18dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/indiv_email"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="邮箱"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/email_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="right|center_vertical"
+                android:paddingRight="10dp"
+                android:text="qq945358676@163.com"
+                android:textSize="18dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/indiv_phone"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="手机"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/phone_tv"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="right|center_vertical"
+                android:paddingRight="10dp"
+                android:text="15622206154"
+                android:textSize="18dp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/save_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/s1"
+            android:text="保存"/>
     </LinearLayout>
 </LinearLayout>

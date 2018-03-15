@@ -55,11 +55,12 @@ public class LoginActivity extends AppCompatActivity {
                         intent.putExtra("login_username",username);
                         intent.putExtra("login_password",password);
                         startActivity(intent);
+                        finish();//完成页面跳转后结束当前activity，即将当前activity从盏移除。
                     } else {
                         Toast.makeText(LoginActivity.this, "用户不存在或用户名密码错误！", Toast.LENGTH_SHORT).show();
                     }
                 }
-                finish();//完成页面跳转后结束当前activity，即将当前activity从盏移除。
+
             }
         });
 

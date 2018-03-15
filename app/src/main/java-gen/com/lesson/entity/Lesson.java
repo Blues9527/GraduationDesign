@@ -10,7 +10,7 @@ public class Lesson {
     private String lesson_name;
     private String lesson_teacher;
     private String lesson_classroom;
-    private Integer student_number;
+    private String student_number;
     private String class_name;
 
     public Lesson() {
@@ -20,7 +20,7 @@ public class Lesson {
         this.id = id;
     }
 
-    public Lesson(Long id, String lesson_name, String lesson_teacher, String lesson_classroom, Integer student_number, String class_name) {
+    public Lesson(Long id, String lesson_name, String lesson_teacher, String lesson_classroom, String student_number, String class_name) {
         this.id = id;
         this.lesson_name = lesson_name;
         this.lesson_teacher = lesson_teacher;
@@ -61,11 +61,11 @@ public class Lesson {
         this.lesson_classroom = lesson_classroom;
     }
 
-    public Integer getStudent_number() {
+    public String getStudent_number() {
         return student_number;
     }
 
-    public void setStudent_number(Integer student_number) {
+    public void setStudent_number(String student_number) {
         this.student_number = student_number;
     }
 

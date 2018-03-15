@@ -55,8 +55,6 @@ public class RegisterActivity extends AppCompatActivity {
         reg_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 final String username = edName.getText().toString().trim();
                 final String password = edPassword.getText().toString().trim();
                 final String email = edEmail.getText().toString().trim();
@@ -123,7 +121,6 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void run() {
                 startActivity(intent);
-                finish();
             }
         };
         time.schedule(tk, 3000);

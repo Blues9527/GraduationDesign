@@ -60,12 +60,13 @@
                     android:textSize="18dp"/>
 
                 <EditText
+                    android:id="@+id/class_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:gravity="end"
                     android:padding="10dp"
-                    android:text="未设置"
+                    android:hint="@string/no_idel"
                     android:textSize="18dp"/>
             </LinearLayout>
 
@@ -78,7 +79,9 @@
                 android:id="@+id/layout_course"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white">
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                 <TextView
                     android:id="@+id/textView2"
@@ -89,12 +92,14 @@
                     android:textColor="@color/black"
                     android:textSize="18dp"/>
 
-                <TextView
+                <EditText
+                    android:id="@+id/lesson_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@null"
                     android:gravity="end"
                     android:padding="10dp"
-                    android:text="未设置"
+                    android:hint="@string/no_idel"
                     android:textSize="18dp"/>
             </LinearLayout>
 
@@ -119,7 +124,9 @@
                 android:id="@+id/school_class"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white">
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -129,11 +136,14 @@
                     android:textColor="@color/black"
                     android:textSize="18dp"/>
 
-                <ImageView
+                <EditText
+                    android:id="@+id/lesson_classroom"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@null"
                     android:gravity="end"
-                    android:padding="10dp"/>
+                    android:padding="10dp"
+                    android:hint="@string/no_idel"/>
             </LinearLayout>
 
             <LinearLayout
@@ -152,22 +162,26 @@
                 android:id="@+id/layout_book"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white">
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text="云教材"
+                    android:text="讲师"
                     android:textColor="@color/black"
                     android:textSize="18dp"/>
 
-                <TextView
+                <EditText
+                    android:id="@+id/lesson_teacher"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@null"
                     android:gravity="end"
                     android:padding="10dp"
-                    android:text="未设置"
+                    android:hint="@string/no_idel"
                     android:textSize="18dp"/>
             </LinearLayout>
 
@@ -185,7 +199,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white">
+                android:background="@color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -193,6 +209,16 @@
                     android:padding="10dp"
                     android:text="设置班课详情"
                     android:textColor="@color/black"
+                    android:textSize="18dp"/>
+
+                <EditText
+                    android:id="@+id/student_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="end"
+                    android:padding="10dp"
+                    android:hint="@string/no_idel"
                     android:textSize="18dp"/>
 
             </LinearLayout>
@@ -216,7 +242,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="end"
                     android:padding="10dp"
-                    android:text="未设置"
+                    android:text="@string/no_idel"
                     android:textSize="18dp"/>
             </LinearLayout>
 
@@ -239,7 +265,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="end"
                     android:padding="10dp"
-                    android:text="未设置"
+                    android:text="@string/no_idel"
                     android:textSize="18dp"/>
             </LinearLayout>
 
@@ -262,7 +288,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="end"
                     android:padding="10dp"
-                    android:text="未设置"
+                    android:text="@string/no_idel"
                     android:textSize="18dp"/>
             </LinearLayout>
 

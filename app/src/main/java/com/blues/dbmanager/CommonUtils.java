@@ -3,8 +3,8 @@ package com.blues.dbmanager;
 import android.content.Context;
 import android.util.Log;
 
-import com.student.entity.Student;
 import com.student.dao.StudentDao;
+import com.student.entity.Student;
 
 import java.util.List;
 
@@ -17,10 +17,10 @@ import de.greenrobot.dao.query.QueryBuilder;
  */
 
 public class CommonUtils {
-    private DaoManager manager;
+    private StudentDaoManager manager;
 
     public CommonUtils(Context context) {
-        manager = DaoManager.getInstance();
+        manager = StudentDaoManager.getInstance();
         manager.init(context);//问题语句 原因--->>空指针异常
     }
 
@@ -33,10 +33,12 @@ public class CommonUtils {
      */
     public boolean insertStudent(Student student) {
         boolean flag = false;
-        flag = manager.getDaoSession().insert(student) != -1 ? true : false;
+        flag = manager.getStudentDaoSession().insert(student) != -1 ? true : false;
         Log.i("CommUtils", "result-->" + flag);
         return flag;
     }
+
+
 
     /**
      * 多条数据的插入
@@ -46,11 +48,11 @@ public class CommonUtils {
         boolean flag = false;
 
         try {
-            manager.getDaoSession().runInTx(new Runnable() {
+            manager.getStudentDaoSession().runInTx(new Runnable() {
                 @Override
                 public void run() {
                     for (Student student : students) {
-                        manager.getDaoSession().insertOrReplace(student);
+                        manager.getStudentDaoSession().insertOrReplace(student);
                     }
                 }
             });
@@ -61,6 +63,7 @@ public class CommonUtils {
         return flag;
     }
 
+
     /**
      * 完成对数据库表中的某一条记录的修改
      */
@@ -69,7 +72,7 @@ public class CommonUtils {
         boolean flag = false;
 
         try {
-            manager.getDaoSession().update(student);
+            manager.getStudentDaoSession().update(student);
             flag = true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -85,7 +88,7 @@ public class CommonUtils {
         boolean flag = false;
 
         try {
-            manager.getDaoSession().delete(student);//删除一条数据
+            manager.getStudentDaoSession().delete(student);//删除一条数据
             //        manager.getDaoSession().deleteAll();//删除所有数据
             flag = true;
         } catch (Exception e) {
@@ -98,7 +101,7 @@ public class CommonUtils {
      * 完成对数据库表中多条记录的查询
      */
     public List<Student> listAll() {
-        return manager.getDaoSession().loadAll(Student.class);
+        return manager.getStudentDaoSession().loadAll(Student.class);
     }
 
     /**
@@ -108,15 +111,14 @@ public class CommonUtils {
      * @return
      */
     public Student listSingleStudent(long key) {
-        return manager.getDaoSession().load(Student.class, key);
+        return manager.getStudentDaoSession().load(Student.class, key);
     }
 
     /**
      * boolean 查询结果
      */
     public boolean userisExist(String username, String password) {
-
-        QueryBuilder<Student> students = manager.getDaoSession().queryBuilder(Student.class);
+        QueryBuilder<Student> students = manager.getStudentDaoSession().queryBuilder(Student.class);
         students.where(StudentDao.Properties.Username.eq(username));
         students.where(StudentDao.Properties.Password.eq(password));
         students.buildCount().count();

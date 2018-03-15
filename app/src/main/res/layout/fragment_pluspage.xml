@@ -51,12 +51,15 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
+
                 >
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/doDownload"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
+                    android:background="@color/touming"
                     android:src="@mipmap/blue_download"
                     />
 
@@ -178,10 +181,12 @@
                 android:orientation="vertical"
                 >
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/doUpload"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
+                    android:background="@color/touming"
                     android:src="@mipmap/blue_share"
                     />
 

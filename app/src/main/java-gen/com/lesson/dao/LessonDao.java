@@ -27,7 +27,7 @@ public class LessonDao extends AbstractDao<Lesson, Long> {
         public final static Property Lesson_name = new Property(1, String.class, "lesson_name", false, "LESSON_NAME");
         public final static Property Lesson_teacher = new Property(2, String.class, "lesson_teacher", false, "LESSON_TEACHER");
         public final static Property Lesson_classroom = new Property(3, String.class, "lesson_classroom", false, "LESSON_CLASSROOM");
-        public final static Property Student_number = new Property(4, Integer.class, "student_number", false, "STUDENT_NUMBER");
+        public final static Property Student_number = new Property(4, String.class, "student_number", false, "STUDENT_NUMBER");
         public final static Property Class_name = new Property(5, String.class, "class_name", false, "CLASS_NAME");
     };
 
@@ -48,7 +48,7 @@ public class LessonDao extends AbstractDao<Lesson, Long> {
                 "\"LESSON_NAME\" TEXT," + // 1: lesson_name
                 "\"LESSON_TEACHER\" TEXT," + // 2: lesson_teacher
                 "\"LESSON_CLASSROOM\" TEXT," + // 3: lesson_classroom
-                "\"STUDENT_NUMBER\" INTEGER," + // 4: student_number
+                "\"STUDENT_NUMBER\" TEXT," + // 4: student_number
                 "\"CLASS_NAME\" TEXT);"); // 5: class_name
     }
 
@@ -83,9 +83,9 @@ public class LessonDao extends AbstractDao<Lesson, Long> {
             stmt.bindString(4, lesson_classroom);
         }
  
-        Integer student_number = entity.getStudent_number();
+        String student_number = entity.getStudent_number();
         if (student_number != null) {
-            stmt.bindLong(5, student_number);
+            stmt.bindString(5, student_number);
         }
  
         String class_name = entity.getClass_name();
@@ -108,7 +108,7 @@ public class LessonDao extends AbstractDao<Lesson, Long> {
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // lesson_name
             cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // lesson_teacher
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // lesson_classroom
-            cursor.isNull(offset + 4) ? null : cursor.getInt(offset + 4), // student_number
+            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4), // student_number
             cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5) // class_name
         );
         return entity;
@@ -121,7 +121,7 @@ public class LessonDao extends AbstractDao<Lesson, Long> {
         entity.setLesson_name(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
         entity.setLesson_teacher(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
         entity.setLesson_classroom(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
-        entity.setStudent_number(cursor.isNull(offset + 4) ? null : cursor.getInt(offset + 4));
+        entity.setStudent_number(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
         entity.setClass_name(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
      }
     
