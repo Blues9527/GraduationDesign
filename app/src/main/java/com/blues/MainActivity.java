@@ -1,7 +1,12 @@
 package com.blues;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -35,6 +40,10 @@ import com.blues.menupages.Setting;
 import com.blues.menupages.Share;
 import com.example.blues.myapplication.R;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private RadioButton igbt1, igbt2, igbt3, igbt4, igbt5;
     private TextView header_nickname, header_email, header_phone;
     private LinearLayout header_layout;
+    private String picPath;
+    private static final int REQUEST_CODE = 5;
     public static final int PAGE_ONE = 0;
     public static final int PAGE_TWO = 1;
     public static final int PAGE_THREE = 2;
@@ -64,16 +75,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         setView();
         initSearch();
+        picPath = Environment.getExternalStorageDirectory().getPath() + "/" + "test.png";
+        initCamera();
 
-        //实现控件的隐藏
-        /*gone_layout = (LinearLayout) findViewById(R.id.gone_layout);
-        imbtn_search = (ImageButton) findViewById(R.id.imbtn_search);
-        imbtn_search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gone_layout.setVisibility(View.VISIBLE);
-            }
-        });*/
         //实例化对象
         /**
          * 侧拉菜单加载
@@ -88,12 +92,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
 
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         //加载用户名
         View headerView = navigationView.getHeaderView(0);
-        header_nickname = (TextView)headerView.findViewById(R.id.header_nickname);
-        String login_username =getIntent().getStringExtra("login_username");
+        header_nickname = (TextView) headerView.findViewById(R.id.header_nickname);
+        String login_username = getIntent().getStringExtra("login_username");
         header_nickname.setText(login_username);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -113,6 +116,42 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    //camera按钮跳转功能
+    private void initCamera() {
+        ImageButton camera_bt = (ImageButton) findViewById(R.id.imbtn_camera);
+        camera_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                Uri uri = Uri.fromFile(new File(picPath));
+                camera_intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+                startActivityForResult(camera_intent,REQUEST_CODE);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK ){
+            if (requestCode == REQUEST_CODE){
+                FileInputStream fis = null;
+                try {
+                    fis = new FileInputStream(picPath);
+                    Bitmap bitmap = BitmapFactory.decodeStream(fis);
+                }catch (FileNotFoundException e){
+                    e.printStackTrace();
+                }finally {
+                    try {
+                        fis.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+    }
+
     //search按钮跳转功能
     private void initSearch() {
         imbt_search = (ImageButton) findViewById(R.id.imbtn_search);
@@ -125,6 +164,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
     }
+
 
     //viewpager绑定imagebutton
     protected void setView() {
@@ -261,6 +301,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    //滑动页面时按钮选中
     @Override
     public void onPageScrollStateChanged(int state) {
         if (state == ViewPager.SCROLL_STATE_SETTLING) {

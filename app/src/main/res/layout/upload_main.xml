@@ -1,45 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <LinearLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="?attr/actionBarSize"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:popupTheme="@style/AppTheme_NoTitle">
 
-        <ImageButton
-            android:id="@+id/upload_back_bt"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/touming"
-            android:src="@mipmap/button_back"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/upload_back_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@color/touming"
+                android:src="@mipmap/button_back"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="上传"
+                android:textColor="@color/darkcyan"
+                android:textSize="25dp"/>
+
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/select_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/upload_bt"
+            android:layout_margin="10dp"
+            android:background="@drawable/s1"
+            android:text="选择"/>
+
+        <TextView
+            android:id="@+id/file_path"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/select_bt"
+            android:gravity="center"
+            android:padding="10dp"/>
+
+        <Button
+            android:id="@+id/upload_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/s1"
+            android:text="上传"
+            />
+
+        <TextView
+            android:id="@+id/file_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/file_path"
+            android:gravity="center"
+            android:padding="10dp"
             />
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:gravity="center"
-            android:text="本文件将上传至Blues个人服务器"
-            android:textSize="21dp"
-            />
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:src="@mipmap/wtfblues3"
-        />
-
-    <Button
-        android:id="@+id/upload_bt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@drawable/s1"
-        android:text="上传"
-        />
-
+            android:text="声明：由于服务器原因目前只支持上传小于2M的文件。
+                            文件路径只支持文件夹"/>
+    </RelativeLayout>
 </LinearLayout>

@@ -84,18 +84,19 @@
             >
 
             <CheckBox
-                android:id="@+id/rememberPasswordTextViewId"
+                android:id="@+id/rememberId"
                 style="@style/CustomCheckboxTheme"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="70dp"
                 android:layout_weight="1"
+                android:checked="false"
                 android:text="记住密码"
                 android:textColor="@color/skyblue"/>
 
             <TextView
-                android:id="@+id/findPasswordTextViewId"
+                android:id="@+id/findId"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

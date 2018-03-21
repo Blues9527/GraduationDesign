@@ -57,4 +57,9 @@ public class CommonUtil {
                 .list();
         return lessons;
     }
+
+    //查询全部
+    public List<Lesson> listAll(){
+        return mManager.getLessonDaoSession().loadAll(Lesson.class);
+    }
 }

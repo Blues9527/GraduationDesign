@@ -13,9 +13,6 @@ import com.blues.dbmanager.CommonUtils;
 import com.example.blues.myapplication.R;
 import com.student.entity.Student;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 public class RegisterActivity extends AppCompatActivity {
 
     private Button reg_btn;
@@ -79,7 +76,12 @@ public class RegisterActivity extends AppCompatActivity {
                         student.setPhone(phone);
                         mcommonUtils.insertStudent(student);
                         Toast.makeText(RegisterActivity.this,"注册成功,两秒后跳转到登陆界面！",Toast.LENGTH_SHORT).show();
-                        setTimeoutIntent();
+
+                        Intent intent = new Intent();
+                        intent.setClass(RegisterActivity.this,LoginActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//关掉所要到的界面中间的activity
+                        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);//设置不要刷新将要跳转的界面
+                        startActivity(intent);
                     }
 
                 }
@@ -113,7 +115,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     //设置延时跳转
-    public void setTimeoutIntent() {
+    /*public void setTimeoutIntent() {
         Timer time = new Timer();
         TimerTask tk = new TimerTask() {
             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
@@ -124,6 +126,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         };
         time.schedule(tk, 3000);
-    }
+    }*/
 
 }

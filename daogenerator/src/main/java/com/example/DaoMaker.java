@@ -9,8 +9,8 @@ public class DaoMaker {
     public static void main(String[] args) {
 
         //生成数据库的实体类xx.entity 对应的数据库的表
-        Schema schema = new Schema(4, "com.student.entity");
-        Schema schema1 = new Schema(4, "com.lesson.entity");
+        Schema schema = new Schema(8, "com.student.entity");
+        Schema schema1 = new Schema(8, "com.lesson.entity");
         addStudent(schema);
         addLesson(schema1);
         schema.setDefaultJavaPackageDao("com.student.dao");

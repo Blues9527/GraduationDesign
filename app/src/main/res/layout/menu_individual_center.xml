@@ -27,6 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:layout_margin="5dp"
                 android:background="@color/touming"
                 android:src="@mipmap/button_back"
                 />
@@ -41,6 +42,16 @@
                 android:textColor="@color/darkcyan"
                 android:textSize="28sp"
                 android:textStyle="italic|normal"/>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="保存"
+                android:textColor="@color/darkcyan"
+                android:background="@color/touming"
+                android:layout_margin="5dp"
+                />
 
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
@@ -57,7 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="15dp"
-            android:layout_weight="2"
+            android:layout_weight="1.5"
             android:background="@color/white"
             android:orientation="horizontal">
 
@@ -82,7 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="15dp"
-            android:layout_weight="1"
+            android:layout_weight="0.8"
             android:background="@color/white"
             android:orientation="horizontal">
 
@@ -111,7 +122,7 @@
             android:id="@+id/indiv_realname"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.8"
             android:background="@color/white"
             android:orientation="horizontal">
 
@@ -139,7 +150,7 @@
             android:id="@+id/indiv_xingbie"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.8"
             android:background="@color/white"
             android:orientation="horizontal">
 
@@ -169,7 +180,7 @@
             android:id="@+id/indiv_suozaidi"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.8"
             android:background="@color/white"
             android:orientation="horizontal">
 
@@ -197,7 +208,7 @@
             android:id="@+id/indiv_identity"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.8"
             android:background="@color/white"
             android:orientation="horizontal">
 
@@ -225,7 +236,7 @@
             android:id="@+id/indiv_email"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.8"
             android:background="@color/white"
             android:orientation="horizontal">
 
@@ -253,7 +264,7 @@
             android:id="@+id/indiv_phone"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.8"
             android:background="@color/white"
             android:orientation="horizontal">
 
@@ -277,13 +288,5 @@
                 android:textSize="18dp"/>
         </LinearLayout>
 
-        <Button
-            android:id="@+id/save_bt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/s1"
-            android:text="保存"/>
     </LinearLayout>
 </LinearLayout>
