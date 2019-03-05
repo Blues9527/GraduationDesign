@@ -1,4 +1,4 @@
-# MyApplication 此App是毕业设计(3.21更新)
+# MyApplication 此App是毕业设计(2018.03.21更新)
 1.具有更加完善的UI 
 
 2.数据库使用的是GreenDao数据库（用户登陆）
