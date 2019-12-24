@@ -27,4 +27,21 @@
     <string name="messagepage_button">消息</string>
 
     <string name="message_01">灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发</string>
+
+
+    <!--Login-->
+    <string name="login_et_username_hint">请输入用户名</string>
+    <string name="login_et_password_hint">请输入密码</string>
+    <string name="login_text_remember">记住密码</string>
+    <string name="login_text_find">找回密码</string>
+    <string name="login_text_first_use">第一次使用？</string>
+    <string name="login_text_register">立即注册</string>
+
+    <!--Register-->
+    <string name="register_et_username_hint">用户名</string>
+    <string name="register_et_password_hint">密码</string>
+    <string name="register_et_email_hint">邮箱</string>
+    <string name="register_et_phone_hint">手机</string>
+    <string name="register_btn_register">注册</string>
+
 </resources>

@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="touming">#00000000</color> <!--透明色-->
+    <color name="transparent">#00000000</color> <!--透明色-->
     <color name="caidanlan">#46c01b</color>
 
     <color name="weixin">#1afa29</color> <!--微信色-->

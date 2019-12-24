@@ -11,9 +11,9 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.blues.CourseActivity;
-import com.blues.dbmanager.CommonUtil;
+import com.blues.database.course.Course;
+import com.blues.database.course.CourseManager;
 import com.example.blues.myapplication.R;
-import com.lesson.entity.Lesson;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,7 +25,6 @@ import java.util.Map;
  */
 
 public class Fragment_homepage extends Fragment {
-    private CommonUtil commonUtil;
     private ListView course_lv;
 
     @Override
@@ -36,7 +35,6 @@ public class Fragment_homepage extends Fragment {
 
         ImageButton add_course = (ImageButton) view.findViewById(R.id.add_course);
         course_lv = (ListView) view.findViewById(R.id.course_lv);
-        commonUtil = new CommonUtil(getActivity());
 
         //点击添加课程
         add_course.setOnClickListener(new View.OnClickListener() {
@@ -52,21 +50,21 @@ public class Fragment_homepage extends Fragment {
         refresh_course.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<Lesson> lessons = commonUtil.listAll();
+                List<Course> courses = CourseManager.getInstance().getAllCourse();
                 List<Map<String, Object>> lessonMaps = new ArrayList<>();
-                for (int i = 0; i < lessons.size(); i++) {
+                for (int i = 0; i < courses.size(); i++) {
                     Map<String, Object> lessonMap = new HashMap<>();
-                    lessonMap.put("Lesson_name", lessons.get(i).getLesson_name());
-                    lessonMap.put("teacher_name", lessons.get(i).getLesson_teacher());
-                    lessonMap.put("class_name", lessons.get(i).getClass_name());
-                    lessonMap.put("classroom_name", lessons.get(i).getLesson_classroom());
-                    lessonMap.put("student_number", lessons.get(i).getStudent_number());
+                    lessonMap.put("name", courses.get(i).getName());
+                    lessonMap.put("teacher", courses.get(i).getTeacher());
+                    lessonMap.put("class_name", courses.get(i).getClass_name());
+                    lessonMap.put("classroom", courses.get(i).getClassroom());
+                    lessonMap.put("st_num", courses.get(i).getSt_num());
                     lessonMaps.add(lessonMap);
                 }
 
                 //添加一个simpleadapter
-                SimpleAdapter adapter = new SimpleAdapter(getActivity(), lessonMaps, R.layout.item_lv_homepage, new String[]{"Lesson_name", "class_name",
-                        "classroom_name", "teacher_name", "student_number"}, new int[]{R.id.course_1, R.id.course_2, R.id.course_3, R.id.course_4, R.id.course_5});
+                SimpleAdapter adapter = new SimpleAdapter(getActivity(), lessonMaps, R.layout.item_lv_homepage, new String[]{"name", "class_name",
+                        "classroom", "teacher", "st_num"}, new int[]{R.id.course_1, R.id.course_2, R.id.course_3, R.id.course_4, R.id.course_5});
 
                 course_lv.setAdapter(adapter);
             }

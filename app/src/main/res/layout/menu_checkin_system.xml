@@ -9,7 +9,7 @@
         android:id="@+id/checkin_system_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/touming"
+        android:background="@color/transparent"
         android:layout_margin="15dp"
         android:src="@mipmap/button_back"
         />

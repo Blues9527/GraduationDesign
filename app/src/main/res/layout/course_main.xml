@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.blues.CourseActivity">
 
+    <include layout="@layout/item_course_header" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/lightgray"
-        >
+        android:background="@color/lightgray">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,15 +29,15 @@
                     android:id="@+id/add_pic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/touming"
-                    android:src="@mipmap/ic_menu_btn_add"/>
+                    android:background="@color/transparent"
+                    android:src="@mipmap/ic_menu_btn_add" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="班课封面（128*128以下）"
                     android:textColor="@color/white"
-                    android:textSize="14dp"/>
+                    android:textSize="14dp" />
             </LinearLayout>
 
             <!--让edittext暂时失去焦点需要在父控件添加 focusable和focusableInTouchMode-->
@@ -54,23 +54,23 @@
                     android:padding="10dp"
                     android:text="班级"
                     android:textColor="@color/black"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
 
                 <EditText
-                    android:id="@+id/class_name"
+                    android:id="@+id/etClass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:gravity="end"
                     android:hint="@string/no_idel"
                     android:padding="10dp"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
             </LinearLayout>
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
-                android:background="@color/lightgray"/>
+                android:background="@color/lightgray" />
 
             <LinearLayout
                 android:id="@+id/layout_course"
@@ -87,23 +87,23 @@
                     android:padding="10dp"
                     android:text="课程"
                     android:textColor="@color/black"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
 
                 <EditText
-                    android:id="@+id/lesson_name"
+                    android:id="@+id/etCourse"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:gravity="end"
                     android:hint="@string/no_idel"
                     android:padding="10dp"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
             </LinearLayout>
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
-                android:background="@color/lightgray"/>
+                android:background="@color/lightgray" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -114,7 +114,7 @@
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:text="类型"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -131,16 +131,16 @@
                     android:padding="10dp"
                     android:text="学校课表班级"
                     android:textColor="@color/black"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
 
                 <EditText
-                    android:id="@+id/lesson_classroom"
+                    android:id="@+id/etClassroom"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="end"
                     android:hint="@string/no_idel"
-                    android:padding="10dp"/>
+                    android:padding="10dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -152,7 +152,7 @@
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:text="学校课表班课就是学校安排课程表里的正式班课"
-                    android:textSize="11dp"/>
+                    android:textSize="11dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -169,17 +169,17 @@
                     android:padding="10dp"
                     android:text="讲师"
                     android:textColor="@color/black"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
 
                 <EditText
-                    android:id="@+id/lesson_teacher"
+                    android:id="@+id/etTeacher"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:gravity="end"
                     android:hint="@string/no_idel"
                     android:padding="10dp"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -189,8 +189,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    />
+                    android:padding="10dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -206,17 +205,17 @@
                     android:padding="10dp"
                     android:text="设置班课详情"
                     android:textColor="@color/black"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
 
                 <EditText
-                    android:id="@+id/student_number"
+                    android:id="@+id/etStudentNum"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:gravity="end"
                     android:hint="@string/no_idel"
                     android:padding="10dp"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
 
             </LinearLayout>
 
@@ -232,7 +231,7 @@
                     android:padding="10dp"
                     android:text="学习要求"
                     android:textColor="@color/black"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -240,7 +239,7 @@
                     android:gravity="end"
                     android:padding="10dp"
                     android:text="@string/no_idel"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -255,7 +254,7 @@
                     android:padding="10dp"
                     android:text="教学进度"
                     android:textColor="@color/black"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -263,7 +262,7 @@
                     android:gravity="end"
                     android:padding="10dp"
                     android:text="@string/no_idel"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -278,7 +277,7 @@
                     android:padding="10dp"
                     android:text="考试安排"
                     android:textColor="@color/black"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -286,7 +285,7 @@
                     android:gravity="end"
                     android:padding="10dp"
                     android:text="@string/no_idel"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -301,7 +300,7 @@
                     android:layout_margin="20dp"
                     android:background="@drawable/s5"
                     android:text="创建"
-                    android:textColor="@color/deepskyblue"/>
+                    android:textColor="@color/deepskyblue" />
             </LinearLayout>
 
 
@@ -309,7 +308,5 @@
 
     </ScrollView>
 
-    <include layout="@layout/item_course_header"
-        />
 
 </LinearLayout>

@@ -8,11 +8,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageButton
-            android:id="@+id/download_back_bt"
+            android:id="@+id/btnBack"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/touming"
+            android:background="@color/transparent"
             android:src="@mipmap/button_back"
             />
 
@@ -26,7 +26,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/download_bt"
+        android:id="@+id/btnDownload"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"

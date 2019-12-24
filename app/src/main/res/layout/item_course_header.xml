@@ -14,7 +14,7 @@
         android:layout_weight="1"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:background="@color/touming"
+        android:background="@color/transparent"
         android:src="@mipmap/button_back"/>
 
     <TextView

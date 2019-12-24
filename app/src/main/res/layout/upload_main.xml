@@ -21,11 +21,11 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/upload_back_bt"
+                android:id="@+id/btnBack"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:background="@color/touming"
+                android:background="@color/transparent"
                 android:src="@mipmap/button_back"
                 />
 
@@ -45,24 +45,24 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/select_bt"
+            android:id="@+id/btnSelect"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/upload_bt"
+            android:layout_above="@+id/btnUpload"
             android:layout_margin="10dp"
             android:background="@drawable/s1"
             android:text="选择"/>
 
         <TextView
-            android:id="@+id/file_path"
+            android:id="@+id/tvPathName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/select_bt"
+            android:layout_above="@+id/btnSelect"
             android:gravity="center"
             android:padding="10dp"/>
 
         <Button
-            android:id="@+id/upload_bt"
+            android:id="@+id/btnUpload"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -72,10 +72,10 @@
             />
 
         <TextView
-            android:id="@+id/file_name"
+            android:id="@+id/tvFileName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/file_path"
+            android:layout_above="@+id/tvPathName"
             android:gravity="center"
             android:padding="10dp"
             />
