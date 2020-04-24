@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.blues.Log.L
 import com.blues.base.BaseActivity
 import com.example.blues.myapplication.R
+import com.example.blues.myapplication.databinding.UploadMainBinding
 import kotlinx.android.synthetic.main.upload_main.*
 
 import java.io.File
@@ -28,7 +29,7 @@ import okhttp3.Response
  * Created by Administrator on 2018/3/12.
  */
 
-class DoUploadActivity : BaseActivity(), View.OnClickListener {
+class DoUploadActivity : BaseActivity<UploadMainBinding>(), View.OnClickListener {
 
     private var fileName: String? = null
     private lateinit var file: File
@@ -58,7 +59,7 @@ class DoUploadActivity : BaseActivity(), View.OnClickListener {
                     addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)//设置不要刷新将要跳转的界面
                 })
             }
-            R.id.btnUpload -> doUpload()
+//            R.id.btnUpload -> doUpload()
             R.id.btnSelect -> {
                 startActivityForResult(Intent.createChooser(Intent(Intent.ACTION_GET_CONTENT).apply {
                     type = "*/*"
@@ -76,6 +77,7 @@ class DoUploadActivity : BaseActivity(), View.OnClickListener {
      * @param intent
      */
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
+        super.onActivityResult(requestCode, resultCode, intent)
         if (resultCode == Activity.RESULT_OK && requestCode == REC_REQUEST_CODE && intent != null) {
             val string = intent.data!!.toString()
             //判断文件是否在sd卡中
@@ -108,44 +110,44 @@ class DoUploadActivity : BaseActivity(), View.OnClickListener {
         }
     }
 
-    private fun doUpload() {
-        /**
-         *
-         * login为struts2上的action
-         */
-        val file1 = File(file.parent, fileName)
-        if (!file1.exists()) {
-            L.e(file1.absolutePath + " not exits!")
-            return
-        }
-
-        //mime type
-        val requestBody = MultipartBody.Builder()
-                .setType(MultipartBody.FORM)
-                .addFormDataPart("file1", fileName, RequestBody.create(MediaType.parse("application/octet-stream"), file1))
-                .build()
-
-        val request = Request.Builder()
-                .url(mBaseUrl + "uploadFile")
-                .post(requestBody)
-                .build()
-
-        val call = client.newCall(request)
-
-        call.enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                e.printStackTrace()
-                L.e("onFailure:" + e.message)
-                runOnUiThread { Toast.makeText(this@DoUploadActivity, "上传失败!", Toast.LENGTH_SHORT).show() }
-            }
-
-            @Throws(IOException::class)
-            override fun onResponse(call: Call, response: Response) {
-                L.e("onResponse: upload success!")
-                runOnUiThread { Toast.makeText(this@DoUploadActivity, "上传成功!", Toast.LENGTH_SHORT).show() }
-            }
-        })
-    }
+//    private fun doUpload() {
+//        /**
+//         *
+//         * login为struts2上的action
+//         */
+//        val file1 = File(file.parent, fileName)
+//        if (!file1.exists()) {
+//            L.e(file1.absolutePath + " not exits!")
+//            return
+//        }
+//
+//        //mime type
+//        val requestBody = MultipartBody.Builder()
+//                .setType(MultipartBody.FORM)
+//                .addFormDataPart("file1", fileName, RequestBody.create(MediaType.parse("application/octet-stream"), file1))
+//                .build()
+//
+//        val request = Request.Builder()
+//                .url(mBaseUrl + "uploadFile")
+//                .post(requestBody)
+//                .build()
+//
+//        val call = client.newCall(request)
+//
+//        call.enqueue(object : Callback {
+//            override fun onFailure(call: Call, e: IOException) {
+//                e.printStackTrace()
+//                L.e("onFailure:" + e.message)
+//                runOnUiThread { Toast.makeText(this@DoUploadActivity, "上传失败!", Toast.LENGTH_SHORT).show() }
+//            }
+//
+//            @Throws(IOException::class)
+//            override fun onResponse(call: Call, response: Response) {
+//                L.e("onResponse: upload success!")
+//                runOnUiThread { Toast.makeText(this@DoUploadActivity, "上传成功!", Toast.LENGTH_SHORT).show() }
+//            }
+//        })
+//    }
 
     companion object {
         private const val REC_REQUEST_CODE = 0x0001

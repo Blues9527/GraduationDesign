@@ -1,11 +1,12 @@
 package com.blues.database.user;
 
-import android.arch.persistence.room.Room;
 import android.content.Context;
 
 import com.blues.util.ThreadManager;
 
 import java.util.List;
+
+import androidx.room.Room;
 
 public class UserManager {
 

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-    >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
     <LinearLayout
@@ -22,14 +21,14 @@
                 android:gravity="center"
                 android:text="课程名称："
                 android:textColor="@color/black"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/course_1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
         </LinearLayout>
 
 
@@ -44,14 +43,14 @@
                 android:gravity="center"
                 android:text="班级名称："
                 android:textColor="@color/black"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/course_2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
         </LinearLayout>
 
 
@@ -66,14 +65,14 @@
                 android:gravity="center"
                 android:text="课室代号："
                 android:textColor="@color/black"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/course_3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
         </LinearLayout>
 
 
@@ -88,14 +87,14 @@
                 android:gravity="center"
                 android:text="教师名称："
                 android:textColor="@color/black"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/course_4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
         </LinearLayout>
 
 
@@ -110,14 +109,14 @@
                 android:gravity="center"
                 android:text="班级人数："
                 android:textColor="@color/black"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/course_5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
         </LinearLayout>
 
 

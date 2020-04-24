@@ -1,6 +1,5 @@
 package com.blues.adapter;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +9,8 @@ import android.widget.TextView;
 import com.example.blues.myapplication.R;
 
 import java.util.ArrayList;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by Administrator on 2018/3/14.

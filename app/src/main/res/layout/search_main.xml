@@ -1,171 +1,171 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/gone_layout"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@mipmap/back_gray"
-            />
-
-        <EditText
-            android:id="@+id/etSearch"
-            android:layout_width="250dp"
-            android:layout_height="32dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="15dp"
-            android:background="@drawable/s9"
-            android:hint="搜索"
-            android:paddingLeft="5dp"
-            android:textColorHint="@color/lightslategray"/>
-
-        <ImageButton
-            android:id="@+id/btnSearch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:background="#00000000"
-            android:src="@mipmap/search"/>
-
-    </LinearLayout>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:background="@color/lightgray"/>
-
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/gone_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <GridLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:columnCount="3"
-            android:orientation="vertical"
-            android:rowCount="2"
-            >
+            android:layout_margin="15dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp"
-                android:weightSum="3">
+                android:background="@mipmap/back_gray" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="0"
-                    android:layout_row="0"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="课程"
-                    android:textColor="@color/mediumseagreen"/>
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="250dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/s9"
+                android:hint="搜索"
+                android:paddingLeft="5dp"
+                android:textColorHint="@color/lightslategray" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:layout_row="0"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="班级"
-                    android:textColor="@color/mediumseagreen"/>
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_row="0"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="讲师"
-                    android:textColor="@color/mediumseagreen"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageButton
+                android:id="@+id/btnSearch"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp"
-                android:weightSum="3">
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="#00000000"
+                android:src="@mipmap/search" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="0"
-                    android:layout_row="1"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="课室"
-                    android:textColor="@color/mediumseagreen"/>
+        </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:layout_row="1"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="学号"
-                    android:textColor="@color/mediumseagreen"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_row="1"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="工号"
-                    android:textColor="@color/mediumseagreen"/>
-
-            </LinearLayout>
-
-
-        </GridLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/lightgray" />
 
         <LinearLayout
-            android:id="@+id/search_ll"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
+            <GridLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/lightgray"/>
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:columnCount="3"
+                android:orientation="vertical"
+                android:rowCount="2">
 
-            <ListView
-                android:id="@+id/lvSearch"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </ListView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:weightSum="3">
 
-            <ImageView
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="课程"
+                        android:textColor="@color/mediumseagreen" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="0"
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="班级"
+                        android:textColor="@color/mediumseagreen" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="0"
+                        android:layout_column="2"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="讲师"
+                        android:textColor="@color/mediumseagreen" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="1"
+                        android:layout_column="0"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="课室"
+                        android:textColor="@color/mediumseagreen" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="1"
+                        android:layout_column="1"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="学号"
+                        android:textColor="@color/mediumseagreen" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="1"
+                        android:layout_column="2"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="工号"
+                        android:textColor="@color/mediumseagreen" />
+
+                </LinearLayout>
+
+
+            </GridLayout>
+
+            <LinearLayout
+                android:id="@+id/search_ll"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/lightgray"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightgray" />
+
+                <ListView
+                    android:id="@+id/lvSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightgray" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
-
-</LinearLayout>
+</layout>

@@ -2,10 +2,7 @@ package com.blues
 
 import android.app.Activity
 import android.content.Intent
-import android.os.Bundle
 import android.provider.MediaStore
-import android.support.v7.app.AlertDialog
-import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 
 import com.example.blues.myapplication.R
@@ -15,13 +12,15 @@ import android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
+import androidx.appcompat.app.AlertDialog
 import com.blues.base.BaseActivity
 import com.blues.database.course.Course
 import com.blues.database.course.CourseManager
+import com.example.blues.myapplication.databinding.CourseMainBinding
 import kotlinx.android.synthetic.main.course_main.*
 import kotlinx.android.synthetic.main.item_course_header.*
 
-class CourseActivity : BaseActivity(), TextWatcher {
+class CourseActivity : BaseActivity<CourseMainBinding>(), TextWatcher {
 
     private var className: String? = null
     private var courseName: String? = null

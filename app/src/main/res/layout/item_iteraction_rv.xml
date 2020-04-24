@@ -1,86 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
     <ImageView
         android:id="@+id/pic_iteraction"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        />
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp" />
 
     <TextView
-        android:paddingBottom="5dp"
         android:id="@+id/title_iteraction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/pic_iteraction"
-        android:layout_marginLeft="20dp"
         android:layout_marginStart="20dp"
-        android:textColor="@color/lightseagreen"
+        android:layout_marginLeft="20dp"
         android:layout_toEndOf="@+id/pic_iteraction"
         android:layout_toRightOf="@+id/pic_iteraction"
-        android:text="TextView"/>
+        android:paddingBottom="5dp"
+        android:text="TextView"
+        android:textColor="@color/lightseagreen" />
 
     <TextView
         android:id="@+id/context_iteraction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingRight="20dp"
-        android:layout_alignLeft="@+id/title_iteraction"
-        android:layout_alignStart="@+id/title_iteraction"
         android:layout_below="@+id/title_iteraction"
-        android:text="TextView"/>
+        android:layout_alignStart="@+id/title_iteraction"
+        android:layout_alignLeft="@+id/title_iteraction"
+        android:paddingRight="20dp"
+        android:text="TextView" />
 
     <ImageView
         android:id="@+id/view_iteraction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/context_iteraction"
-        android:layout_alignStart="@+id/context_iteraction"
         android:layout_below="@+id/context_iteraction"
+        android:layout_alignStart="@+id/context_iteraction"
+        android:layout_alignLeft="@+id/context_iteraction"
         android:layout_marginTop="16dp"
-        app:srcCompat="@mipmap/account_1"/>
+        app:srcCompat="@mipmap/account_1" />
 
     <TextView
         android:id="@+id/time_iteraction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        android:layout_marginBottom="8dp"
         android:layout_below="@+id/view_iteraction"
+        android:layout_alignStart="@+id/view_iteraction"
         android:layout_alignLeft="@+id/view_iteraction"
-        android:layout_alignStart="@+id/view_iteraction"/>
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView" />
 
     <ImageButton
         android:id="@+id/comments_iteraction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/source_iteraction"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         android:background="@color/transparent"
-        android:src="@mipmap/comments_16"
-        android:layout_alignBottom="@+id/source_iteraction"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:src="@mipmap/comments_16" />
 
     <TextView
         android:id="@+id/source_iteraction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/time_iteraction"
-        android:layout_marginLeft="46dp"
         android:layout_marginStart="46dp"
+        android:layout_marginLeft="46dp"
         android:layout_toEndOf="@+id/time_iteraction"
         android:layout_toRightOf="@+id/time_iteraction"
-        android:text="TextView"/>
+        android:text="TextView" />
 </RelativeLayout>

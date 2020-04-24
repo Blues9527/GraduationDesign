@@ -1,81 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/sample_main_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<layout>
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/sample_main_layout"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:contentInsetEnd="0dp"
-        app:contentInsetLeft="0dp"
-        app:contentInsetRight="0dp"
-        app:contentInsetStart="0dp"
-        app:popupTheme="@style/AppTheme_NoTitle">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:elevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:contentInsetEnd="0dp"
+                app:contentInsetLeft="0dp"
+                app:contentInsetRight="0dp"
+                app:contentInsetStart="0dp"
+                app:popupTheme="@style/AppTheme_NoTitle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparent">
+
+                    <ImageButton
+                        android:id="@+id/imbtn_camera"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@color/transparent"
+                        android:src="@drawable/camera_24" />
+
+                    <TextView
+                        android:id="@+id/tb_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@color/darkcyan"
+                        android:textSize="28sp"
+                        android:textStyle="italic|normal"
+                        tools:text="Blues" />
+
+                    <ImageButton
+                        android:id="@+id/imbtn_search"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@color/transparent"
+                        android:src="@drawable/search_24" />
+                </LinearLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_main_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/transparent">
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
 
-            <ImageButton
-                android:id="@+id/imbtn_camera"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@color/transparent"
-                android:src="@drawable/camera_24" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#ededed" />
 
-            <TextView
-                android:id="@+id/tb_title"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textColor="@color/darkcyan"
-                android:textSize="28sp"
-                android:textStyle="italic|normal"
-                tools:text="Blues" />
-
-            <ImageButton
-                android:id="@+id/imbtn_search"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@color/transparent"
-                android:src="@drawable/search_24" />
-        </LinearLayout>
-
-    </android.support.v7.widget.Toolbar>
-
-
-    <android.support.v4.widget.DrawerLayout
-        android:id="@+id/drawer_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <include layout="@layout/content_main" />
-
-        <android.support.design.widget.NavigationView
-            android:id="@+id/nav_view"
-            android:layout_width="180dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:fitsSystemWindows="true"
-            app:headerLayout="@layout/drawer_header"
-            app:itemIconTint="@color/nav_selector"
-            app:itemTextColor="@color/nav_selector"
-            app:menu="@menu/activity_main_drawer" />
-
-
-    </android.support.v4.widget.DrawerLayout>
-
-
-</LinearLayout>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="?android:attr/windowBackground"
+            app:labelVisibilityMode="labeled"
+            app:itemIconTint="@color/bottom_selector"
+            app:itemTextColor="@color/bottom_selector"
+            app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+            app:menu="@menu/bottom" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

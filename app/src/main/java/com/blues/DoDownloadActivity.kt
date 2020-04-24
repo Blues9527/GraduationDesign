@@ -1,22 +1,16 @@
 package com.blues
 
 import android.content.Intent
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.ImageView
 
 import com.blues.Log.L
 import com.blues.base.BaseActivity
 import com.example.blues.myapplication.R
+import com.example.blues.myapplication.databinding.DownloadMainBinding
 import kotlinx.android.synthetic.main.download_main.*
 
 import java.io.IOException
-import java.io.InputStream
 
 import okhttp3.Call
 import okhttp3.Callback
@@ -28,7 +22,7 @@ import okhttp3.Response
  * Created by Administrator on 2018/3/12.
  */
 
-class DoDownloadActivity : BaseActivity(), View.OnClickListener {
+class DoDownloadActivity : BaseActivity<DownloadMainBinding>(), View.OnClickListener {
 
     private val mBaseUrl = "http://39.108.158.234/DemoOkHttp/"//服务器地址
     private var client = OkHttpClient()
@@ -88,7 +82,7 @@ class DoDownloadActivity : BaseActivity(), View.OnClickListener {
             override fun onResponse(call: Call, response: Response) {
                 L.e("onResponse:")
                 //在App下载并动态加载图片
-                val bitmap = BitmapFactory.decodeStream(response.body()!!.byteStream())
+                val bitmap = BitmapFactory.decodeStream(response.body!!.byteStream())
                 runOnUiThread { download_image!!.setImageBitmap(bitmap) }
 
                 //将图片下载到本地文件夹中

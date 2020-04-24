@@ -1,11 +1,15 @@
 package com.blues.base
 
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity<V : ViewDataBinding> : AppCompatActivity() {
 
-    protected lateinit var mActivity: BaseActivity
+    protected lateinit var mActivity: BaseActivity<V>
+
+    protected lateinit var mDataBinding: V
 
     //设置layout id
     abstract fun setLayoutId(): Int
@@ -20,9 +24,9 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(setLayoutId())
-
         mActivity = this
+
+        mDataBinding = DataBindingUtil.setContentView(mActivity, setLayoutId())
 
         initLayout()
 

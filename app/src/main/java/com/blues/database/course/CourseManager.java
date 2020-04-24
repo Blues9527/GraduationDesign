@@ -1,9 +1,10 @@
 package com.blues.database.course;
 
-import android.arch.persistence.room.Room;
 import android.content.Context;
 
 import java.util.List;
+
+import androidx.room.Room;
 
 
 public class CourseManager {
@@ -14,7 +15,7 @@ public class CourseManager {
     }
 
     private static class Holder {
-        public static final CourseManager INSTANCE = new CourseManager();
+        static final CourseManager INSTANCE = new CourseManager();
     }
 
     public static CourseManager getInstance() {

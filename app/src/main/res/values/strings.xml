@@ -21,10 +21,10 @@
     <string name="no_idel">未设置</string>
 
     <!--主页底部导航按钮-->
-    <string name="homepage_button">主页</string>
-    <string name="contactspage_button">朋友</string>
-    <string name="personalpage_button">圈子</string>
-    <string name="messagepage_button">消息</string>
+    <string name="bottom_home">主页</string>
+    <string name="bottom_contacts">朋友</string>
+    <string name="bottom_personal">圈子</string>
+    <string name="bottom_message">消息</string>
 
     <string name="message_01">灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发</string>
 
@@ -38,10 +38,9 @@
     <string name="login_text_register">立即注册</string>
 
     <!--Register-->
-    <string name="register_et_username_hint">用户名</string>
-    <string name="register_et_password_hint">密码</string>
-    <string name="register_et_email_hint">邮箱</string>
-    <string name="register_et_phone_hint">手机</string>
+    <string name="register_et_username_hint">请输入用户名</string>
+    <string name="register_et_password_hint">请输入密码</string>
+    <string name="register_et_repassword_hint">再次输入密码</string>
     <string name="register_btn_register">注册</string>
 
 </resources>

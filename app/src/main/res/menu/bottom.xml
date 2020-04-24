@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_home"
+            android:icon="@mipmap/ic_home_white"
+            android:title="@string/bottom_home" />
+        <item
+            android:id="@+id/menu_contacts"
+            android:icon="@mipmap/ic_friend_white"
+            android:title="@string/bottom_contacts" />
+        <item
+            android:id="@+id/menu_personal"
+            android:icon="@mipmap/ic_contacts_white"
+            android:title="@string/bottom_personal" />
+        <item
+            android:id="@+id/menu_message"
+            android:icon="@mipmap/ic_message_white"
+            android:title="@string/bottom_message" />
+    </group>
+
+</menu>

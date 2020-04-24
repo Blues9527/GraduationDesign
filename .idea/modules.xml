@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AfterEducationProject.iml" filepath="$PROJECT_DIR$/AfterEducationProject.iml" group="AfterEducationProject" />
+      <module fileurl="file://$PROJECT_DIR$/app/AfterEducationProject-app.iml" filepath="$PROJECT_DIR$/app/AfterEducationProject-app.iml" group="AfterEducationProject/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/daogenerator/daogenerator.iml" filepath="$PROJECT_DIR$/daogenerator/daogenerator.iml" />
     </modules>

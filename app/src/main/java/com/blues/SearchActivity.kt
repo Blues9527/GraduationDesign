@@ -12,6 +12,7 @@ import com.blues.base.BaseActivity
 import com.blues.database.course.CourseManager
 
 import com.example.blues.myapplication.R
+import com.example.blues.myapplication.databinding.SearchMainBinding
 import kotlinx.android.synthetic.main.search_main.*
 
 import java.util.ArrayList
@@ -22,7 +23,7 @@ import java.util.HashMap
  * Created by Administrator on 2018/2/10.
  */
 
-class SearchActivity : BaseActivity(), TextWatcher {
+class SearchActivity : BaseActivity<SearchMainBinding>(), TextWatcher {
     private lateinit var searchText: String
 
     override fun setLayoutId(): Int {

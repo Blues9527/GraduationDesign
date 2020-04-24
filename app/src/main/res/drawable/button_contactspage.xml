@@ -4,11 +4,11 @@
 
     <!--<item android:drawable="@drawable/friend_blue"
           android:state_pressed="true"/>
-    <item android:drawable="@drawable/white_friend"
+    <item android:drawable="@drawable/ic_friend_white"
           android:state_pressed="false"/>-->
     <!--<item android:drawable="@drawable/friend_blue"
           android:state_focused="true"/>
-    <item android:drawable="@drawable/white_friend"
+    <item android:drawable="@drawable/ic_friend_white"
           android:state_focused="false"/>-->
     <item android:drawable="@drawable/green1_friend"
           android:state_checked="true"/>

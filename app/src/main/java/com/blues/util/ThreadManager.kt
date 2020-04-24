@@ -1,6 +1,7 @@
 package com.blues.util
 
 import android.os.Handler
+import android.os.HandlerThread
 import android.os.Looper
 
 import java.util.concurrent.LinkedBlockingQueue
@@ -16,6 +17,7 @@ object ThreadManager {
 
     //主线程
     private val mMainHandler = Handler(Looper.getMainLooper())
+
 
     private val executor = ThreadPoolExecutor(
             10,
@@ -52,5 +54,6 @@ object ThreadManager {
     fun executeRunnable(runnable: Runnable) {
         executor.execute(runnable)
     }
+
 
 }

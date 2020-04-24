@@ -1,69 +1,50 @@
 package com.blues
 
+import android.annotation.SuppressLint
 import android.app.Activity
-import android.arch.persistence.room.Room
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.net.Uri
-import android.os.Bundle
+import android.os.Build
 import android.os.Environment
 import android.provider.MediaStore
-import android.support.design.widget.NavigationView
-import android.support.v4.app.Fragment
-import android.support.v4.view.ViewPager
-import android.support.v4.widget.DrawerLayout
-import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.widget.Toolbar
-import android.view.Gravity
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.ImageButton
-import android.widget.LinearLayout
-import android.widget.RadioButton
-import android.widget.RadioGroup
-import android.widget.TextView
-
-import com.blues.adapter.FragmentAdapter
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import com.blues.base.BaseActivity
-import com.blues.database.course.CourseDataBase
 import com.blues.database.course.CourseManager
-import com.blues.database.user.User
-import com.blues.database.user.UserDataBase
-import com.blues.database.user.UserManager
-import com.blues.fragment.Fragment_contactpage
-import com.blues.fragment.Fragment_homepage
-import com.blues.fragment.Fragment_messagepage
-import com.blues.fragment.Fragment_personalpage
-import com.blues.fragment.Fragment_pluspage
-import com.blues.menupages.Checkin_system
-import com.blues.menupages.Help
-import com.blues.menupages.Individual_center
-import com.blues.menupages.Marking_system
-import com.blues.menupages.My_album
-import com.blues.menupages.Setting
-import com.blues.menupages.Share
-import com.blues.util.ThreadManager
+import com.blues.fragment.ContactFragment
+import com.blues.fragment.HomeFragment
+import com.blues.fragment.MessageFragment
+import com.blues.fragment.PersonFragment
 import com.example.blues.myapplication.R
+import com.example.blues.myapplication.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
-import kotlinx.android.synthetic.main.content_main.view.*
 import kotlinx.android.synthetic.main.drawer_header.*
-
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileNotFoundException
 import java.io.IOException
-import java.lang.StringBuilder
-import java.util.ArrayList
 
 /**
  * Created by Administrator on 2018/1/27.
  */
 
-class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, RadioGroup.OnCheckedChangeListener, ViewPager.OnPageChangeListener {
+class MainActivity : BaseActivity<ActivityMainBinding>(), BottomNavigationView.OnNavigationItemSelectedListener {
 
     private var picPath: String? = null
+    private var mCurrentFragment: Fragment? = null
+    private var fragments: ArrayList<Fragment> = ArrayList<Fragment>().apply {
+        add(HomeFragment())
+        add(ContactFragment())
+        add(PersonFragment())
+        add(MessageFragment())
+    }
 
     override fun setLayoutId(): Int {
         return R.layout.activity_main
@@ -73,11 +54,8 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         tb_title.text = "Blues"
         setSupportActionBar(toolbar)
 
-        val toggle = ActionBarDrawerToggle(this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        drawer_layout.addDrawerListener(toggle)
-        toggle.syncState()
-
-        picPath = StringBuilder().append(Environment.getExternalStorageDirectory().path)
+        picPath = StringBuilder()
+                .append(Environment.getExternalStorageDirectory().path)
                 .append("/")
                 .append(System.currentTimeMillis())
                 .append(".png")
@@ -85,30 +63,22 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
         header_nickname?.text = intent.getStringExtra("login_username")
 
-        viewpager.apply {
-            adapter = FragmentAdapter(supportFragmentManager, ArrayList<Fragment>().apply {
-                add(Fragment_homepage())
-                add(Fragment_contactpage())
-                add(Fragment_personalpage())
-                add(Fragment_messagepage())
-                add(Fragment_pluspage())
-            })
-            setCurrentItem(PAGE_ONE, false)
-            addOnPageChangeListener(this@MainActivity)
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
+            disableShiftMode(mDataBinding.bottomView)
         }
-        group.check(R.id.homepageId)
+
+        showFragment(null, fragments[0])
     }
 
     override fun setListener() {
 
-        nav_view.setNavigationItemSelectedListener(this)
-        group.setOnCheckedChangeListener(this@MainActivity)
+        bottom_view.setOnNavigationItemSelectedListener(this@MainActivity)
 
         //设置相机监听跳转
         imbtn_camera.setOnClickListener {
             startActivityForResult(Intent(MediaStore.ACTION_IMAGE_CAPTURE)
                     .apply {
-                        putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(File(picPath)))
+                        putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(File(picPath!!)))
                     }, REQUEST_CODE)
         }
 
@@ -125,7 +95,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             if (requestCode == REQUEST_CODE) {
                 var fis: FileInputStream? = null
                 try {
-                    fis = FileInputStream(picPath)
+                    fis = FileInputStream(picPath!!)
                     BitmapFactory.decodeStream(fis)
                 } catch (e: FileNotFoundException) {
                     e.printStackTrace()
@@ -141,132 +111,73 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         }
     }
 
-
-    //drawer layout
-    override fun onBackPressed() {
-        if (drawer_layout.isDrawerOpen(Gravity.START)) {
-            drawer_layout.closeDrawer(Gravity.START)
-        } else {
-            super.onBackPressed()
-        }
-    }
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return if (item.itemId == R.id.action_settings) {
-            true
-        } else super.onOptionsItemSelected(item)
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.nav_account -> {
-                startActivity(Intent().apply {
-                    setClass(this@MainActivity, Individual_center::class.java)
-                    flags = Intent.FLAG_ACTIVITY_CLEAR_TOP//关掉所要到的界面中间的activity
-                    addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)//设置不要刷新将要跳转的界面
-                })
-            }
-            R.id.nav_gallery -> {
-                startActivity(Intent().apply {
-                    setClass(this@MainActivity, My_album::class.java)
-                    flags = Intent.FLAG_ACTIVITY_CLEAR_TOP//关掉所要到的界面中间的activity
-                    addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)//设置不要刷新将要跳转的界面
-                })
-            }
-            R.id.nav_good -> {
-                startActivity(Intent().apply {
-                    setClass(this@MainActivity, Marking_system::class.java)
-                    flags = Intent.FLAG_ACTIVITY_CLEAR_TOP//关掉所要到的界面中间的activity
-                    addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)//设置不要刷新将要跳转的界面
-                })
-            }
-
-            R.id.nav_sign -> {
-                startActivity(Intent().apply {
-                    setClass(this@MainActivity, Checkin_system::class.java)
-                    flags = Intent.FLAG_ACTIVITY_CLEAR_TOP//关掉所要到的界面中间的activity
-                    addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)//设置不要刷新将要跳转的界面
-                })
-            }
-
-            R.id.nav_setting -> {
-                startActivity(Intent().apply {
-                    setClass(this@MainActivity, Setting::class.java)
-                    flags = Intent.FLAG_ACTIVITY_CLEAR_TOP//关掉所要到的界面中间的activity
-                    addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)//设置不要刷新将要跳转的界面
-                })
-            }
-
-            R.id.nav_share -> {
-                startActivity(Intent().apply {
-                    setClass(this@MainActivity, Share::class.java)
-                    flags = Intent.FLAG_ACTIVITY_CLEAR_TOP//关掉所要到的界面中间的activity
-                    addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)//设置不要刷新将要跳转的界面
-                })
-            }
-            R.id.nav_help -> {
-                startActivity(Intent().apply {
-                    setClass(this@MainActivity, Help::class.java)
-                    flags = Intent.FLAG_ACTIVITY_CLEAR_TOP//关掉所要到的界面中间的activity
-                    addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)//设置不要刷新将要跳转的界面
-                })
-            }
-
-            else -> {
-
-            }
-        }
-
-        drawer_layout.closeDrawer(Gravity.START)
-        return true
-    }
-
-    //radio group 为radiobutton绑定监听器
-    override fun onCheckedChanged(group: RadioGroup, checkedId: Int) {
-        when (checkedId) {
-            R.id.homepageId -> viewpager.setCurrentItem(PAGE_ONE, false)
-            R.id.contactpageId -> viewpager.setCurrentItem(PAGE_TWO, false)
-            R.id.personalpageId -> viewpager.setCurrentItem(PAGE_THREE, false)
-            R.id.messagepageId -> viewpager.setCurrentItem(PAGE_FOUR, false)
-            R.id.plusId -> viewpager.setCurrentItem(PAGE_FIVE, false)
-        }
-    }
-
-    //viewpager监听事件
-    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-
-    }
-
-    override fun onPageSelected(position: Int) {
-
-    }
-
-    //滑动页面时按钮选中
-    override fun onPageScrollStateChanged(state: Int) {
-        if (state == ViewPager.SCROLL_STATE_SETTLING) {
-            when (viewpager.currentItem) {
-                PAGE_ONE -> homepageId.isChecked = true
-                PAGE_TWO -> contactpageId.isChecked = true
-                PAGE_THREE -> personalpageId.isChecked = true
-                PAGE_FOUR -> messagepageId.isChecked = true
-                PAGE_FIVE -> plusId.isChecked = true
-            }
-        }
+        return if (item.itemId == R.id.action_settings) true
+        else super.onOptionsItemSelected(item)
     }
 
     companion object {
         private const val REQUEST_CODE = 5
-        const val PAGE_ONE = 0
-        const val PAGE_TWO = 1
-        const val PAGE_THREE = 2
-        const val PAGE_FOUR = 3
-        const val PAGE_FIVE = 4
     }
 
+    @SuppressLint("RestrictedApi")
+    private fun disableShiftMode(bottomView: BottomNavigationView) {
+        val menuView = bottomView.getChildAt(0) as BottomNavigationMenuView
+        try {
+            val shiftMode = menuView.javaClass.getDeclaredField("mShiftingMode")
+            shiftMode.isAccessible = true
+            shiftMode.setBoolean(menuView, false)
+            shiftMode.isAccessible = false
+            for (i in 0 until menuView.childCount) {
+                val item = menuView.getChildAt(i) as BottomNavigationItemView
+                item.setChecked(item.itemData.isChecked)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
 
+    private fun showFragment(from: Fragment?, to: Fragment?) {
+        if (to == null) return
+        val transaction = (mActivity as FragmentActivity).supportFragmentManager.beginTransaction()
+        val isAdded = to.isAdded
+        if (!isAdded) {
+            if (from != null) {
+                transaction.hide(from)
+                        .add(R.id.fl_main_container, to, null)
+                        .show(to)
+                        .commitAllowingStateLoss()
+            } else {
+                transaction.add(R.id.fl_main_container, to, null)
+                        .show(to)
+                        .commitAllowingStateLoss()
+            }
+        } else {
+            if (from != null) {
+                transaction.hide(from)
+                        .show(to)
+                        .commitAllowingStateLoss()
+            } else {
+                transaction.show(to)
+                        .commitAllowingStateLoss()
+            }
+        }
+        mCurrentFragment = to
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        Log.i("Blues", item.itemId.toString())
+        when (item.itemId) {
+            R.id.menu_home -> showFragment(mCurrentFragment, fragments[0])
+            R.id.menu_contacts -> showFragment(mCurrentFragment, fragments[1])
+            R.id.menu_personal -> showFragment(mCurrentFragment, fragments[2])
+            R.id.menu_message -> showFragment(mCurrentFragment, fragments[3])
+        }
+        return true
+    }
 }

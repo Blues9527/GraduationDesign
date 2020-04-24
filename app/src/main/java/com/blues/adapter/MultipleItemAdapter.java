@@ -1,17 +1,18 @@
 package com.blues.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.blues.been.Chat;
+import com.blues.been.ChatEntity;
 import com.example.blues.myapplication.R;
 
 import java.util.List;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by Administrator on 2018/3/15.
@@ -20,9 +21,9 @@ import java.util.List;
 public class MultipleItemAdapter extends RecyclerView.Adapter<MultipleItemAdapter.ViewHolder> {
 
     private final Context context;
-    private List<Chat> list;
+    private List<ChatEntity> list;
 
-    public MultipleItemAdapter(Context context, List<Chat> list) {
+    public MultipleItemAdapter(Context context, List<ChatEntity> list) {
         this.context = context;
         this.list = list;
     }

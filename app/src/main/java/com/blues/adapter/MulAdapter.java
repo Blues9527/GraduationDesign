@@ -1,17 +1,18 @@
 package com.blues.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.blues.been.Iteraction;
+import com.blues.been.IteractionEntity;
 import com.example.blues.myapplication.R;
 
 import java.util.List;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by Administrator on 2018/3/19.
@@ -20,9 +21,9 @@ import java.util.List;
 public class MulAdapter extends RecyclerView.Adapter<MulAdapter.ViewHolder> {
 
     private Context mContext;
-    private List<Iteraction> list;
+    private List<IteractionEntity> list;
 
-    public MulAdapter(Context context, List<Iteraction> list) {
+    public MulAdapter(Context context, List<IteractionEntity> list) {
         this.mContext = context;
         this.list = list;
     }
@@ -31,8 +32,7 @@ public class MulAdapter extends RecyclerView.Adapter<MulAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_iteraction_rv, null, false);
-        ViewHolder viewHolder = new ViewHolder(v);
-        return viewHolder;
+        return new ViewHolder(v);
     }
 
     @Override
@@ -51,20 +51,20 @@ public class MulAdapter extends RecyclerView.Adapter<MulAdapter.ViewHolder> {
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView title_iteraction, context_iteraction, time_iteraction, soucre_iteraction;
         ImageView pic_iteaction, view_iteraction;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            title_iteraction = (TextView) itemView.findViewById(R.id.title_iteraction);
-            context_iteraction = (TextView) itemView.findViewById(R.id.context_iteraction);
-            time_iteraction = (TextView) itemView.findViewById(R.id.time_iteraction);
-            soucre_iteraction = (TextView) itemView.findViewById(R.id.source_iteraction);
+            title_iteraction = itemView.findViewById(R.id.title_iteraction);
+            context_iteraction = itemView.findViewById(R.id.context_iteraction);
+            time_iteraction = itemView.findViewById(R.id.time_iteraction);
+            soucre_iteraction = itemView.findViewById(R.id.source_iteraction);
 
-            pic_iteaction = (ImageView) itemView.findViewById(R.id.pic_iteraction);
-            view_iteraction = (ImageView) itemView.findViewById(R.id.view_iteraction);
+            pic_iteaction = itemView.findViewById(R.id.pic_iteraction);
+            view_iteraction = itemView.findViewById(R.id.view_iteraction);
         }
     }
 }
