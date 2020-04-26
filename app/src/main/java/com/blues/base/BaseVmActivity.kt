@@ -5,9 +5,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.blues.App
+import com.blues.application.App
 
 abstract class BaseVmActivity<V : ViewDataBinding, VM : BaseViewModel> : AppCompatActivity() {
 

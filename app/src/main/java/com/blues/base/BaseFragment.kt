@@ -1,6 +1,5 @@
 package com.blues.base
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,15 +27,6 @@ abstract class BaseFragment<V : ViewDataBinding> : Fragment() {
         return inflater.inflate(setLayoutResourceId(), container, false)
     }
 
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (mContext != null) {
-            this.mContext = context as BaseActivity<V>?
-        } else {
-            this.mContext = activity as BaseActivity<V>?
-        }
-    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

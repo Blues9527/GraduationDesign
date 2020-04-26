@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.blues.App"
+        android:name="com.blues.application.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -28,20 +28,20 @@
             android:configChanges="keyboardHidden|screenSize|orientation"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme_NoTitle.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
 
         <activity
-            android:name="com.blues.register.RegisterActivity"
+            android:name="com.blues.register.view.RegisterActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme_NoTitle.LoginActivity" />
 
         <activity
-            android:name="com.blues.MainActivity"
+            android:name="com.blues.main.MainActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme_NoTitle">
@@ -49,11 +49,14 @@
             <intent-filter>
                 <action android:name="android.media.action.IMAGE_CAPTURE" />
                 <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity
-            android:name="com.blues.SearchActivity"
+            android:name="com.blues.search.SearchActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"
             android:theme="@style/AppTheme_NoTitle" />
         <activity
@@ -85,17 +88,17 @@
             android:configChanges="keyboardHidden|screenSize|orientation"
             android:theme="@style/AppTheme_NoTitle" />
         <activity
-            android:name="com.blues.CourseActivity"
+            android:name="com.blues.course.view.CourseActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"
             android:theme="@style/AppTheme_NoTitle" />
 
         <activity
-            android:name="com.blues.DoDownloadActivity"
+            android:name="com.blues.main.extra.download.DoDownloadActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"
             android:theme="@style/AppTheme_NoTitle" />
 
         <activity
-            android:name="com.blues.DoUploadActivity"
+            android:name="com.blues.main.extra.upload.DoUploadActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"
             android:theme="@style/AppTheme_NoTitle">
             <!--调用系统相机-->

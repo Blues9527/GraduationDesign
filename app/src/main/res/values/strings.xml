@@ -22,8 +22,8 @@
 
     <!--主页底部导航按钮-->
     <string name="bottom_home">主页</string>
-    <string name="bottom_contacts">朋友</string>
-    <string name="bottom_personal">圈子</string>
+    <string name="bottom_contacts">通讯录</string>
+    <string name="bottom_personal">动态</string>
     <string name="bottom_message">消息</string>
 
     <string name="message_01">灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发</string>
@@ -42,5 +42,12 @@
     <string name="register_et_password_hint">请输入密码</string>
     <string name="register_et_repassword_hint">再次输入密码</string>
     <string name="register_btn_register">注册</string>
+
+    <!--    contact    -->
+    <string name="contact_new_friend">新的朋友</string>
+    <string name="contact_group_chat">群聊</string>
+    <string name="contact_tag">标签</string>
+    <string name="contact_subscribe">订阅号</string>
+    <string name="contact_star_friend">星标朋友</string>
 
 </resources>

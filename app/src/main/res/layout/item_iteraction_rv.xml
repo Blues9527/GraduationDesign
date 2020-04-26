@@ -1,85 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="15dp">
 
 
     <ImageView
-        android:id="@+id/pic_iteraction"
+        android:id="@+id/ivIcon"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="12dp" />
+        android:layout_marginTop="12dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/title_iteraction"
+        android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/pic_iteraction"
         android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_toEndOf="@+id/pic_iteraction"
-        android:layout_toRightOf="@+id/pic_iteraction"
+        android:layout_marginTop="12dp"
         android:paddingBottom="5dp"
-        android:text="TextView"
-        android:textColor="@color/lightseagreen" />
+        android:textColor="@color/lightseagreen"
+        app:layout_constraintLeft_toRightOf="@+id/ivIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="username" />
 
     <TextView
-        android:id="@+id/context_iteraction"
+        android:id="@+id/tvContent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/title_iteraction"
-        android:layout_alignStart="@+id/title_iteraction"
-        android:layout_alignLeft="@+id/title_iteraction"
-        android:paddingRight="20dp"
-        android:text="TextView" />
+        android:paddingEnd="20dp"
+        app:layout_constraintLeft_toLeftOf="@+id/tvUsername"
+        app:layout_constraintTop_toBottomOf="@+id/tvUsername"
+        tools:text="title" />
 
     <ImageView
-        android:id="@+id/view_iteraction"
+        android:id="@+id/ivCover"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/context_iteraction"
-        android:layout_alignStart="@+id/context_iteraction"
-        android:layout_alignLeft="@+id/context_iteraction"
         android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toLeftOf="@+id/tvContent"
+        app:layout_constraintTop_toBottomOf="@+id/tvContent"
         app:srcCompat="@mipmap/account_1" />
 
     <TextView
-        android:id="@+id/time_iteraction"
+        android:id="@+id/tvDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/view_iteraction"
-        android:layout_alignStart="@+id/view_iteraction"
-        android:layout_alignLeft="@+id/view_iteraction"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView" />
-
-    <ImageButton
-        android:id="@+id/comments_iteraction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/source_iteraction"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:background="@color/transparent"
-        android:src="@mipmap/comments_16" />
+        app:layout_constraintLeft_toLeftOf="@+id/ivCover"
+        app:layout_constraintTop_toBottomOf="@+id/ivCover"
+        tools:text="date" />
 
     <TextView
-        android:id="@+id/source_iteraction"
+        android:id="@+id/tvSource"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/time_iteraction"
-        android:layout_marginStart="46dp"
-        android:layout_marginLeft="46dp"
-        android:layout_toEndOf="@+id/time_iteraction"
-        android:layout_toRightOf="@+id/time_iteraction"
-        android:text="TextView" />
-</RelativeLayout>
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toRightOf="@+id/tvDate"
+        app:layout_constraintTop_toBottomOf="@+id/ivCover"
+        tools:text="source" />
+
+    <ImageButton
+        android:id="@+id/ibComments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:background="@color/transparent"
+        android:src="@mipmap/comments_16"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivCover" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

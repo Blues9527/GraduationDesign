@@ -2,7 +2,7 @@ package com.blues.menu
 
 import android.content.Intent
 
-import com.blues.MainActivity
+import com.blues.main.MainActivity
 import com.blues.base.BaseActivity
 import com.example.blues.myapplication.R
 import com.example.blues.myapplication.databinding.MenuCheckinSystemBinding

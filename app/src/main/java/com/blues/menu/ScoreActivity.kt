@@ -6,8 +6,7 @@ import android.widget.AdapterView
 import android.widget.RatingBar
 import android.widget.Toast
 
-import com.blues.MainActivity
-import com.blues.adapter.MyAdapter
+import com.blues.main.MainActivity
 import com.blues.base.BaseActivity
 import com.example.blues.myapplication.R
 import com.example.blues.myapplication.databinding.MenuMarkingSystemBinding
@@ -50,9 +49,9 @@ class ScoreActivity : BaseActivity<MenuMarkingSystemBinding>() {
 
 
         //配置适配器 MyAdapter为自定义适配器，继承自BaseAdapter
-        val adapter = MyAdapter(this)
-        spScore.adapter = adapter
-        adapter.setDatas(mockData())
+//        val adapter = MyAdapter(this)
+//        spScore.adapter = adapter
+//        adapter.setDatas(mockData())
     }
 
     override fun setListener() {

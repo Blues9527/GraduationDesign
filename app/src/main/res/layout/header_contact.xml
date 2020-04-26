@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@mipmap/new_friends"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:text="@string/contact_new_friend"
+        android:textColor="@color/text_color"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginStart="50dp"
+        android:background="@color/text_color" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@mipmap/chat"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:text="@string/contact_group_chat"
+        android:textColor="@color/text_color"
+        android:textSize="15sp" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginStart="50dp"
+        android:background="@color/text_color" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@mipmap/tags"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:text="@string/contact_tag"
+        android:textColor="@color/text_color"
+        android:textSize="15sp" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginStart="50dp"
+        android:background="@color/text_color" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@mipmap/gongzhonghao"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:text="@string/contact_subscribe"
+        android:textColor="@color/text_color"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginStart="50dp"
+        android:background="@color/text_color" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/gainsboro"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:paddingEnd="0dp"
+        android:text="@string/contact_star_friend" />
+
+</LinearLayout>

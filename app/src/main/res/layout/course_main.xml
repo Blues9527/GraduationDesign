@@ -6,9 +6,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="com.blues.CourseActivity">
+        tools:context="com.blues.course.view.CourseActivity">
 
-        <include layout="@layout/item_course_header" />
+        <include
+            android:id="@+id/header"
+            layout="@layout/item_course_header" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -28,7 +30,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/add_pic"
+                        android:id="@+id/addPic"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/transparent"
@@ -205,7 +207,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
-                        android:text="设置班课详情"
+                        android:text="设置选修人数"
                         android:textColor="@color/black"
                         android:textSize="18dp" />
 
@@ -216,6 +218,7 @@
                         android:background="@null"
                         android:gravity="end"
                         android:hint="@string/no_idel"
+                        android:inputType="number"
                         android:padding="10dp"
                         android:textSize="18dp" />
 
@@ -304,12 +307,7 @@
                         android:text="创建"
                         android:textColor="@color/deepskyblue" />
                 </LinearLayout>
-
-
             </LinearLayout>
-
         </ScrollView>
-
-
     </LinearLayout>
 </layout>

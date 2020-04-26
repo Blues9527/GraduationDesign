@@ -1,7 +1,7 @@
-package com.blues.mvvmdemo.util
 
 import android.app.Activity
 import android.content.Intent
+import com.blues.mvvmdemo.util.putExtras
 
 /**
  * Created by xiaojianjun on 2019-10-17.

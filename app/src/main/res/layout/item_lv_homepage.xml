@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
 
     <LinearLayout
@@ -24,7 +24,8 @@
                 android:textSize="18dp" />
 
             <TextView
-                android:id="@+id/course_1"
+                android:textColor="@android:color/black"
+                android:id="@+id/tvCourseName"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -46,7 +47,7 @@
                 android:textSize="18dp" />
 
             <TextView
-                android:id="@+id/course_2"
+                android:id="@+id/tvClassName"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -68,7 +69,7 @@
                 android:textSize="18dp" />
 
             <TextView
-                android:id="@+id/course_3"
+                android:id="@+id/tvClassroomName"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -90,7 +91,7 @@
                 android:textSize="18dp" />
 
             <TextView
-                android:id="@+id/course_4"
+                android:id="@+id/tvTeacherName"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -112,7 +113,7 @@
                 android:textSize="18dp" />
 
             <TextView
-                android:id="@+id/course_5"
+                android:id="@+id/tvStuNum"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

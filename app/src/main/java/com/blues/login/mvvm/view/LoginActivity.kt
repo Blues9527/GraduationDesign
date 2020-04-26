@@ -5,12 +5,11 @@ import android.text.TextWatcher
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.Observer
-import com.blues.App
-import com.blues.MainActivity
-import com.blues.register.RegisterActivity
+import com.blues.application.App
+import com.blues.main.MainActivity
+import com.blues.register.view.RegisterActivity
 import com.blues.base.BaseVmActivity
 import com.blues.login.mvvm.vm.LoginViewModel
-import com.blues.mvvmdemo.util.ActivityUtil
 import com.blues.util.SpUtils
 
 import com.example.blues.myapplication.R
@@ -37,9 +36,13 @@ class LoginActivity : BaseVmActivity<LoginMainBinding, LoginViewModel>(), TextWa
 
         Log.i(tag, "saved msg, username-->$savedUsername, password-->$savedPassword")
 
-        when {
-            savedUsername!!.isNotEmpty() -> mDataBinding.etUsername.setText(savedUsername)
-            savedPassword!!.isNotEmpty() -> mDataBinding.etPassword.setText(savedPassword)
+        if (!savedUsername.isNullOrEmpty()) {
+            mDataBinding.etUsername.setText(savedUsername)
+            username = savedUsername
+        }
+        if (!savedPassword.isNullOrEmpty()) {
+            mDataBinding.etPassword.setText(savedPassword)
+            password = savedPassword
         }
     }
 
