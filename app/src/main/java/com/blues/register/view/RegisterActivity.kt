@@ -77,6 +77,10 @@ class RegisterActivity : BaseVmActivity<RegisterMainBinding, RegisterViewModel>(
                 ActivityUtil.finish(RegisterActivity::class.java)
             }
         })
+
+        mViewModel.registering.observe(this, Observer {
+            if (it) showProgressDialog(R.string.registerring) else hideProgressDialog()
+        })
     }
 
     override fun afterTextChanged(s: Editable?) {

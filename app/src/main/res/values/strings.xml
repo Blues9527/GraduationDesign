@@ -27,7 +27,10 @@
     <string name="bottom_message">消息</string>
 
     <string name="message_01">灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发灰化肥会挥发黑会挥发</string>
-
+    <!--progress hint-->
+    <string name="loading">正在加载中&#8230;</string>
+    <string name="logging_in">正在登陆&#8230;</string>
+    <string name="registerring">正在注册&#8230;</string>
 
     <!--Login-->
     <string name="login_et_username_hint">请输入用户名</string>

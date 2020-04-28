@@ -50,14 +50,6 @@ class HomeFragment : BaseVmFragment<FragmentHomepageBinding, HomeViewModel>(), V
         mViewModel.queryCourse()
         rvCourse.apply {
             addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
-//            setLayoutManager(LinearLayoutManager(context))
-//            adapter = object : RecyclerArrayAdapter<Course>(context) {
-//                override fun OnCreateViewHolder(parent: ViewGroup?, viewType: Int): BaseViewHolder<*> {
-//                    return CourseInfoViewHolder(parent)
-//                }
-//            }.apply {
-//                mAdapter = this
-//            }
         }
 
         mAdapter.apply {

@@ -2,17 +2,21 @@ package com.blues.base
 
 import android.os.Bundle
 import android.widget.Toast
+import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
 import com.blues.application.App
+import com.blues.framework.widget.ProgressDialogFragment
 
 abstract class BaseVmActivity<V : ViewDataBinding, VM : BaseViewModel> : AppCompatActivity() {
 
     lateinit var mDataBinding: V
     lateinit var mViewModel: VM
     lateinit var mContext: BaseVmActivity<V, VM>
+
+    private lateinit var progressDialogFragment: ProgressDialogFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +54,20 @@ abstract class BaseVmActivity<V : ViewDataBinding, VM : BaseViewModel> : AppComp
 
     open fun setListener() {
 
+    }
+
+    fun showProgressDialog(@StringRes message: Int) {
+
+        if (!this::progressDialogFragment.isInitialized) {
+            progressDialogFragment = ProgressDialogFragment.newInstance()
+        }
+        progressDialogFragment.show(supportFragmentManager, message, false)
+    }
+
+    fun hideProgressDialog() {
+        if (this::progressDialogFragment.isInitialized && progressDialogFragment.isVisible) {
+            progressDialogFragment.dismiss()
+        }
     }
 
     open fun showToast(msg: String) {

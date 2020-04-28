@@ -28,7 +28,7 @@
                 android:layout_marginStart="40dp"
                 android:src="@mipmap/grey_personalcenter" />
 
-            <EditText
+            <com.blues.framework.widget.DrawableEditText
                 android:id="@+id/etUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -39,7 +39,10 @@
                 android:inputType="textPersonName"
                 android:padding="8dp"
                 android:textColor="@color/ivory"
-                android:textColorHint="@color/darkgray" />
+                android:textColorHint="@color/darkgray"
+                app:drawableHeight="20dp"
+                app:drawableRight="@drawable/ic_close"
+                app:drawableWidth="20dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -61,7 +64,7 @@
                 android:layout_marginStart="40dp"
                 android:background="@mipmap/grey_password" />
 
-            <EditText
+            <com.blues.framework.widget.DrawableEditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -72,7 +75,10 @@
                 android:inputType="textPassword"
                 android:padding="8dp"
                 android:textColor="@color/ivory"
-                android:textColorHint="@color/darkgray" />
+                android:textColorHint="@color/darkgray"
+                app:drawableHeight="20dp"
+                app:drawableRight="@drawable/ic_close"
+                app:drawableWidth="20dp" />
 
         </LinearLayout>
 

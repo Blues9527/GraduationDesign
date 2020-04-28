@@ -5,7 +5,6 @@ import android.app.Application
 import android.os.Bundle
 import com.blues.course.database.CourseManager
 
-import com.blues.database.user.UserManager
 import com.blues.util.ThreadManager
 
 class App : Application() {

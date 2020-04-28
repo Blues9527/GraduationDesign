@@ -1,14 +1,17 @@
 package com.blues.login.mvvm.view
 
+import android.graphics.Rect
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import com.blues.application.App
 import com.blues.main.MainActivity
 import com.blues.register.view.RegisterActivity
 import com.blues.base.BaseVmActivity
+import com.blues.framework.widget.DrawableEditText
 import com.blues.login.mvvm.vm.LoginViewModel
 import com.blues.util.SpUtils
 
@@ -47,8 +50,25 @@ class LoginActivity : BaseVmActivity<LoginMainBinding, LoginViewModel>(), TextWa
     }
 
     override fun setListener() {
-        mDataBinding.etUsername.addTextChangedListener(this)
-        mDataBinding.etPassword.addTextChangedListener(this)
+        mDataBinding.etUsername.also {
+            it.addTextChangedListener(this)
+            it.setDrawableListener(object : DrawableEditText.OnDrawableListener {
+                override fun onRightListener(v: View) {
+                    //清空edit text
+                    it.setText("")
+                }
+            })
+        }
+
+        mDataBinding.etPassword.also {
+            it.addTextChangedListener(this)
+            it.setDrawableListener(object : DrawableEditText.OnDrawableListener {
+                override fun onRightListener(v: View) {
+                    //清空edit text
+                    it.setText("")
+                }
+            })
+        }
 
         mDataBinding.tvRegisterNow.setOnClickListener {
             ActivityUtil.start(RegisterActivity::class.java)
@@ -80,6 +100,10 @@ class LoginActivity : BaseVmActivity<LoginMainBinding, LoginViewModel>(), TextWa
             } else {
                 Toast.makeText(App.instance, "登陆错误", Toast.LENGTH_SHORT).show()
             }
+        })
+
+        mViewModel.logining.observe(this, Observer {
+            if (it) showProgressDialog(R.string.logging_in) else hideProgressDialog()
         })
     }
 
