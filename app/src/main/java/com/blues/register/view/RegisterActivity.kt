@@ -56,9 +56,9 @@ class RegisterActivity : BaseVmActivity<RegisterMainBinding, RegisterViewModel>(
                 username.isEmpty() -> showToast("账号不能为空")
                 password.isEmpty() -> showToast("密码不能为空")
                 repassword.isEmpty() -> showToast("密码不能为空")
-                !TextUtils.equals(password, repassword) -> showToast("两次密码输入不一致，请重新输入密码")
+                password != repassword -> showToast("两次密码输入不一致，请重新输入密码")
                 else -> {
-                    mViewModel.register(username, password, repassword)
+                    mViewModel.register(username, password, repassword, tips = { showToast(it) })
                 }
             }
         }
